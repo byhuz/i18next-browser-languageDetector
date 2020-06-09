@@ -1,6 +1,6 @@
 {
-  "name": "i18next-browser-languagedetector",
-  "version": "4.2.0",
+  "name": "@byhuz/i18next-browser-languagedetector",
+  "version": "4.2.2",
   "description": "language detector used in browser environment for i18next",
   "main": "./dist/cjs/i18nextBrowserLanguageDetector.js",
   "module": "./dist/esm/i18nextBrowserLanguageDetector.js",
@@ -8,6 +8,9 @@
   "keywords": [
     "i18next",
     "i18next-languageDetector"
+  ],
+  "files": [
+    "dist/*"
   ],
   "homepage": "https://github.com/i18next/i18next-browser-languageDetector",
   "bugs": "https://github.com/i18next/i18next-browser-languageDetector/issues",
@@ -53,7 +56,8 @@
     "test:typescript:noninterop": "tslint --project tsconfig.nonEsModuleInterop.json",
     "build": "rimraf dist && rollup -c && cpy \"./dist/umd/*.js\" ./",
     "preversion": "npm run build && git push",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "deploy": "npm install && npm run build && npm publish --access public"
   },
   "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
   "license": "MIT"
